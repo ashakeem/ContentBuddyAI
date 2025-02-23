@@ -1,16 +1,19 @@
 import { useNavigate } from 'react-router-dom'
 import { useUser } from '@/contexts/UserContext'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
+import { Menu, X } from 'lucide-react'
 
 export default function Home() {
   const navigate = useNavigate()
   const { isAuthenticated } = useUser()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   
   const featuresRef = useRef(null)
   const testimonialsRef = useRef(null)
 
   const scrollToSection = (elementRef: any) => {
     elementRef.current?.scrollIntoView({ behavior: 'smooth' })
+    setMobileMenuOpen(false)
   }
 
   return (
@@ -29,6 +32,8 @@ export default function Home() {
                 </span>
               </div>
             </div>
+            
+            {/* Desktop menu */}
             <div className="hidden md:flex items-center space-x-8">
               <button
                 onClick={() => scrollToSection(featuresRef)}
@@ -60,15 +65,59 @@ export default function Home() {
             </div>
             
             {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button className="text-gray-300 hover:text-white">
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden text-gray-300 hover:text-white p-2"
+            >
+              {mobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
           </div>
         </div>
+
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-gray-800/95 backdrop-blur-sm border-b border-gray-700">
+            <div className="px-4 py-3 space-y-3">
+              <button
+                onClick={() => scrollToSection(featuresRef)}
+                className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"
+              >
+                Features
+              </button>
+              <button
+                onClick={() => scrollToSection(testimonialsRef)}
+                className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"
+              >
+                Testimonials
+              </button>
+              {isAuthenticated ? (
+                <button
+                  onClick={() => {
+                    navigate('/dashboard')
+                    setMobileMenuOpen(false)
+                  }}
+                  className="block w-full text-left px-3 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded-lg transition-colors"
+                >
+                  Dashboard
+                </button>
+              ) : (
+                <button
+                  onClick={() => {
+                    navigate('/login')
+                    setMobileMenuOpen(false)
+                  }}
+                  className="block w-full text-left px-3 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded-lg transition-colors"
+                >
+                  Login
+                </button>
+              )}
+            </div>
+          </div>
+        )}
       </nav>
 
       <div className="container mx-auto px-4 py-16 sm:py-24">
