@@ -9,9 +9,11 @@ import Profile from './pages/Profile'
 import NotFound from './pages/NotFound'
 import './App.css'
 import { Toaster } from "@/components/ui/toaster"
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
+    <Analytics>
     <BrowserRouter>
       <UserProvider>
         <Routes>
@@ -39,6 +41,7 @@ function App() {
       </UserProvider>
       <Toaster />
     </BrowserRouter>
+    </Analytics>
   )
 }
 
