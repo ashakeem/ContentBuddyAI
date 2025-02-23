@@ -10,5 +10,6 @@ psycopg2-binary
 python-dotenv
 psycopg2-binary
 google-generativeai
+django-db-connection-pool
 
 
