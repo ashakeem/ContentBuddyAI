@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { UserProvider } from './contexts/UserContext'
+import {  Routes, Route } from 'react-router-dom'
 import { ProtectedRoute } from './components/ProtectedRoute'
 import Home from './pages/Home'
 import Login from './pages/Login'
@@ -13,8 +12,6 @@ import { Toaster } from "@/components/ui/toaster"
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <UserProvider>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
@@ -37,9 +34,8 @@ function App() {
             />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </UserProvider>
         <Toaster />
-      </BrowserRouter>
+ 
     </>
   )
 }
