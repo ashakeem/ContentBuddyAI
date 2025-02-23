@@ -20,9 +20,14 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
-              <span className="text-xl font-bold text-white">
-                ContentBuddy<span className="text-blue-500">.ai</span>
-              </span>
+              <div className="text-2xl font-bold text-white">
+                <span 
+                  onClick={() => navigate('/')} 
+                  className="cursor-pointer hover:opacity-80 transition-opacity"
+                >
+                  ContentBuddy<span className="text-blue-500">.ai</span>
+                </span>
+              </div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <button
@@ -111,18 +116,21 @@ export default function Home() {
         <div ref={featuresRef} className="py-24">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-white text-center mb-12">
-              Powerful Features
+              <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+                Powerful Features
+              </span>
             </h2>
             <div className="mt-24 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Card 1 */}
-              <div className="group bg-gray-800 rounded-xl p-6 hover:shadow-lg transition-all duration-300 border border-gray-700">
-                <div className="text-center space-y-4">
-                  <div className="w-12 h-12 mx-auto bg-blue-500/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 border border-gray-700/50 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative z-10 text-center space-y-4">
+                  <div className="w-14 h-14 mx-auto bg-blue-500/10 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-300">
+                    <svg className="w-7 h-7 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-semibold text-white">Content Ideas</h3>
+                  <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">Content Ideas</h3>
                   <p className="text-gray-400">
                     Generate creative content ideas tailored to your target audience
                   </p>
@@ -130,14 +138,15 @@ export default function Home() {
               </div>
 
               {/* Card 2 */}
-              <div className="group bg-gray-800 rounded-xl p-6 hover:shadow-lg transition-all duration-300 border border-gray-700">
-                <div className="text-center space-y-4">
-                  <div className="w-12 h-12 mx-auto bg-blue-500/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 border border-gray-700/50 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative z-10 text-center space-y-4">
+                  <div className="w-14 h-14 mx-auto bg-blue-500/10 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-300">
+                    <svg className="w-7 h-7 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-semibold text-white">AI-Generated Scripts</h3>
+                  <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">AI-Generated Scripts</h3>
                   <p className="text-gray-400">
                     Transform your ideas into well-structured scripts automatically
                   </p>
@@ -145,16 +154,36 @@ export default function Home() {
               </div>
 
               {/* Card 3 */}
-              <div className="group bg-gray-800 rounded-xl p-6 hover:shadow-lg transition-all duration-300 border border-gray-700 sm:col-span-2 lg:col-span-1">
-                <div className="text-center space-y-4">
-                  <div className="w-12 h-12 mx-auto bg-blue-500/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 border border-gray-700/50 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative z-10 text-center space-y-4">
+                  <div className="w-14 h-14 mx-auto bg-blue-500/10 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-300">
+                    <svg className="w-7 h-7 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-semibold text-white">Content Management</h3>
+                  <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">Content Management</h3>
                   <p className="text-gray-400">
                     Organize and manage your content library efficiently
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 4 - Scheduler */}
+              <div className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 border border-gray-700/50 relative overflow-hidden sm:col-span-2 lg:col-span-1">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative z-10 text-center space-y-4">
+                  <div className="w-14 h-14 mx-auto bg-blue-500/10 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-300">
+                    <svg className="w-7 h-7 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div className="relative flex items-center justify-center gap-2">
+                    <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">Content Scheduler</h3>
+                    <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-xs text-white px-2 py-1 rounded-full">Coming Soon</span>
+                  </div>
+                  <p className="text-gray-400">
+                    Sync your content calendar and schedule posts automatically
                   </p>
                 </div>
               </div>
@@ -238,12 +267,27 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="mt-32 border-t border-gray-800">
-        <div className="container mx-auto px-4 py-8">
-          <div className="flex flex-col items-center justify-center space-y-4">
-            <div className="text-xl font-bold text-white">
-              ContentBuddy<span className="text-blue-500">.ai</span>
+        <div className="container mx-auto px-4 py-12">
+          <div className="flex flex-col items-center justify-center space-y-6">
+            <div className="text-2xl font-bold text-white bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+              ContentBuddy<span>.ai</span>
             </div>
-            <p className="text-gray-400">Created by Ayomide Hakeem</p>
+            <div className="flex flex-col items-center space-y-2 text-center">
+              <p className="text-gray-400 text-sm">
+                © {new Date().getFullYear()} ContentBuddy.ai. All rights reserved.
+              </p>
+              <p className="text-gray-500 text-sm">
+                Engineered by {" "}
+                <a 
+                  href="https://ayomidehakeem.dev" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-blue-400 hover:text-blue-300 transition-colors"
+                >
+                  Ayomide Hakeem
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </footer>

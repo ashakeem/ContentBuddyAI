@@ -46,10 +46,10 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const login = (token: string, refreshToken: string) => {
+  const login = async (token: string, refreshToken: string) => {
     localStorage.setItem('token', token);
     localStorage.setItem('refreshToken', refreshToken);
-    fetchUserDetails();
+    await fetchUserDetails();
   };
 
   const logout = () => {

@@ -8,5 +8,4 @@ pytz
 sqlparse
 psycopg2-binary
 python-dotenv
-google-generativeai
-google-generativeai-types
+

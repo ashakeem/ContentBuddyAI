@@ -6,7 +6,6 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
 import Profile from './pages/Profile'
-import Settings from './pages/Settings'
 import NotFound from './pages/NotFound'
 import './App.css'
 import { Toaster } from "@/components/ui/toaster"
@@ -32,14 +31,6 @@ function App() {
             element={
               <ProtectedRoute>
                 <Profile />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/settings"
-            element={
-              <ProtectedRoute>
-                <Settings />
               </ProtectedRoute>
             }
           />
