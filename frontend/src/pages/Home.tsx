@@ -6,10 +6,10 @@ export default function Home() {
   const navigate = useNavigate()
   const { isAuthenticated } = useUser()
   
-  const featuresRef = useRef<HTMLDivElement>(null)
-  const testimonialsRef = useRef<HTMLDivElement>(null)
+  const featuresRef = useRef(null)
+  const testimonialsRef = useRef(null)
 
-  const scrollToSection = (elementRef: React.RefObject<HTMLDivElement>) => {
+  const scrollToSection = (elementRef: any) => {
     elementRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
 
