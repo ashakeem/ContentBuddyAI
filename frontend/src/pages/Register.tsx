@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useUser } from '@/contexts/UserContext'
 import api from '@/lib/axios'
 import { toast } from '@/components/ui/use-toast'
 import { PasswordInput } from '@/components/PasswordInput'
@@ -9,7 +8,6 @@ export default function Register() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
-  const { login } = useUser()
   const navigate = useNavigate()
 
   const handleSubmit = async (e: React.FormEvent) => {

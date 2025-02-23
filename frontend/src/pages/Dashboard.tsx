@@ -61,10 +61,6 @@ export default function Dashboard() {
   }
 
   const filteredIdeas = ideas
-    .filter(idea => {
-      if (filter === 'all') return true
-      return idea.status === filter
-    })
     .filter(idea =>
       idea.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       idea.description.toLowerCase().includes(searchTerm.toLowerCase()) ||

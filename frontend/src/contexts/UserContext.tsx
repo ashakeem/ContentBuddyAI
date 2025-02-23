@@ -29,7 +29,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
 
   const fetchUserDetails = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/v1/users/me/', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/users/me/`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
