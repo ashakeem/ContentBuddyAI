@@ -10,7 +10,9 @@ export default function Home() {
   const testimonialsRef = useRef<HTMLDivElement>(null)
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
-    ref.current?.scrollIntoView({ behavior: 'smooth' })
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   return (

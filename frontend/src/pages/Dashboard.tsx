@@ -250,7 +250,7 @@ export default function Dashboard() {
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
                       <p className="text-gray-300 font-medium">
-                        Script (Version {idea.script.version})
+                        Script (Version {idea.script?.version})
                       </p>
                       <button
                         onClick={() => {
